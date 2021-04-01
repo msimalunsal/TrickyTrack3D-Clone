@@ -4,14 +4,30 @@ using UnityEngine;
 
 public class Boost : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerStay(Collider other)
+    {
+        PlayerMovement player = other.GetComponent<PlayerMovement>();
+        if(player != null)
+        {
+            if(GetComponent<Animator>().GetBool("isOpen"))
+            {
+                player.Speed =  3f;
+            }
+            else
+            {
+                player.Speed =  .75f;
+            }
 
+        }    
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
         PlayerMovement player = other.GetComponent<PlayerMovement>();
         
-        if(other!=null)
+        if(player != null)
         {
-            //if()
-            player.Speed = player.Speed/2;
+            player.Speed = 1.5f;
         }
     }
 }

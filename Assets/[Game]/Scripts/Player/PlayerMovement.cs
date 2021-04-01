@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
             speed = value;
         }
     }
+    
     // Update is called once per frame
     void Update()
     {
