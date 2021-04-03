@@ -19,24 +19,27 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
+    private bool isMove = true;
 
     private void OnEnable()
     {
-        EventManager.OnPlayerWait.AddListener(() => speed = 0f);
-        EventManager.OnObstacleOpen.AddListener(() => speed = 2f);
+        EventManager.OnPlayerWait.AddListener(() => isMove = false);
+        EventManager.OnObstacleOpen.AddListener(() => isMove = true);
     }
 
     private void OnDisable()
     {
-        EventManager.OnPlayerWait.RemoveListener(() => speed = 0f);
-        EventManager.OnObstacleOpen.RemoveListener(() => speed = 2f);
-
-        
+        EventManager.OnPlayerWait.RemoveListener(() => isMove = false);
+        EventManager.OnObstacleOpen.RemoveListener(() => isMove = true);
     }
     // Update is called once per frame
     void Update()
     {
-        MovePlayer();
+        if(isMove)
+        {
+            MovePlayer();            
+        }
+  
     }
 
     private void MovePlayer()

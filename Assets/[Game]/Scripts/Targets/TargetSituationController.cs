@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class TargetSituationController : MonoBehaviour
 {
-    public enum TargetSituation {open , close};
-    
-    public TargetSituation targetSituation;
+    private Target situation;
+
     private void Start()
     {
-        targetSituation= TargetSituation.close;
+        situation = transform.parent.gameObject.GetComponent<Target>();
+        situation.targetSituation = Target.TargetSituation.close;
     }
 
     private void OnCollisionEnter(Collision other)
@@ -17,15 +17,15 @@ public class TargetSituationController : MonoBehaviour
         var ball = other.gameObject.GetComponent<Ball>();
         if(ball != null)
         {
-            if(targetSituation == TargetSituation.close)
+            if(situation.targetSituation == Target.TargetSituation.close)
             {
+                situation.targetSituation = Target.TargetSituation.open;
                 EventManager.OnObstacleOpen.Invoke();
-                targetSituation = TargetSituation.open;
             }
             else
             {
+                situation.targetSituation = Target.TargetSituation.close;
                 EventManager.OnObstacleClose.Invoke();
-                targetSituation = TargetSituation.close;
             }
             
         }

@@ -5,9 +5,10 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     private Animator animator;
-
+    private Target parent;
     private void Start()
     {
+        parent = transform.parent.gameObject.GetComponent<Target>();
         animator = GetComponent<Animator>();
     }
     private void OnEnable() 
@@ -24,11 +25,17 @@ public class Obstacle : MonoBehaviour
 
     private void PlayObstacleOpenAnim()
     {
-        animator.SetBool("isOpen" , true);
+        if(parent.targetSituation == Target.TargetSituation.open)
+        {
+            animator.SetBool("isOpen" , true);
+        }
     }
 
     private void PlayObstacleCloseAnim()
     {
-        animator.SetBool("isOpen" , false);
+        if(parent.targetSituation == Target.TargetSituation.close)
+        {
+            animator.SetBool("isOpen" , false);
+        }
     }
 }

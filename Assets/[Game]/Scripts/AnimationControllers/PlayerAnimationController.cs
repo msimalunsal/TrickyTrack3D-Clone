@@ -6,6 +6,10 @@ public class PlayerAnimationController : MonoBehaviour
 {
     private Animator animator;
 
+    private void Start() {
+        animator = GetComponent<Animator>();
+    }
+
     private void OnEnable()
     {
         EventManager.OnPlayerWait.AddListener(() => animator.SetBool("isWait" , true));
@@ -19,7 +23,5 @@ public class PlayerAnimationController : MonoBehaviour
         
     }
 
-    private void Start() {
-        animator = GetComponent<Animator>();
-    }
+
 }
