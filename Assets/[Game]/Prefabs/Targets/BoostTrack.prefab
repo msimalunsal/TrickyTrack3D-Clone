@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 7633142626810401305}
   - component: {fileID: 7633142626810401304}
   - component: {fileID: 7633142626810401310}
+  - component: {fileID: 1663976378}
   m_Layer: 0
   m_Name: BoostTrack
   m_TagString: Untagged
@@ -236,8 +237,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.2322388, y: 0.78852654, z: 9.807434}
-  m_Center: {x: 1.1161206, y: -0.28198814, z: 1.065098}
+  m_Size: {x: 3.2322388, y: 0.78852654, z: 12.704371}
+  m_Center: {x: 1.1161206, y: -0.28198814, z: -0.38337094}
 --- !u!95 &7633142626810401305
 Animator:
   serializedVersion: 3
@@ -281,6 +282,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 826c66e8804c29a44b4ccb4fd453f4aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1663976378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7633142626810401306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f1f2a892aee514bbf99110a37b5479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSituation: 0
 --- !u!1 &8956982123995309048
 GameObject:
   m_ObjectHideFlags: 0
