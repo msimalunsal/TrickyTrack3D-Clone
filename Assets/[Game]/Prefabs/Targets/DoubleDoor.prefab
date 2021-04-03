@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54753c31ea21ca644823c8644423857b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetSituation: 0
 --- !u!1 &228853032396037889
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +180,7 @@ Transform:
   m_GameObject: {fileID: 3031133489619504173}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.757544, y: -0.1784854, z: -0.1276012}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_Children: []
   m_Father: {fileID: 5229372444336415285}
   m_RootOrder: 0
@@ -352,7 +353,7 @@ Transform:
   m_GameObject: {fileID: 4262330644467738342}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.757544, y: -0.1784854, z: -0.1276012}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_Children: []
   m_Father: {fileID: 5229372444336415285}
   m_RootOrder: 1
@@ -414,6 +415,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8099806901049062561}
+  - component: {fileID: 526090904}
+  - component: {fileID: 526090906}
   m_Layer: 0
   m_Name: DoubleDoor
   m_TagString: Untagged
@@ -439,6 +442,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &526090904
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8099806901049062558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.377326, y: 1.1299839, z: 0.3212514}
+  m_Center: {x: 2.5174842, y: -0.8215127, z: 0.16968751}
+--- !u!114 &526090906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8099806901049062558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f1f2a892aee514bbf99110a37b5479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 3064403304276560984}
 --- !u!1 &8099806902059552953
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,8 +497,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8099806902059552953}
   m_LocalRotation: {x: 0.000087254804, y: 0.99993896, z: -0.011047733, w: 0.0000009640266}
-  m_LocalPosition: {x: 2.27, y: -0.9497244, z: 2.03}
-  m_LocalScale: {x: 1.1723124, y: 0.84434915, z: 0.0875}
+  m_LocalPosition: {x: 2.409, y: -0.9497244, z: 2.03}
+  m_LocalScale: {x: 1.4507611, y: 0.84434915, z: 0.0875}
   m_Children: []
   m_Father: {fileID: 8099806901049062561}
   m_RootOrder: 2

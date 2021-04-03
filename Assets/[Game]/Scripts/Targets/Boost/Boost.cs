@@ -11,11 +11,11 @@ public class Boost : MonoBehaviour
         {
             if(GetComponent<Animator>().GetBool("isOpen"))
             {
-                player.Speed =  3f;
+                player.Speed =  4f;
             }
             else
             {
-                player.Speed =  .75f;
+                player.Speed =  1f;
             }
 
         }    
@@ -27,7 +27,7 @@ public class Boost : MonoBehaviour
         
         if(player != null)
         {
-            player.Speed = 1.5f;
+            player.Speed = 2f;
         }
     }
 }

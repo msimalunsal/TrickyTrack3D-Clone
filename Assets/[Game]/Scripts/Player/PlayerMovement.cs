@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private float speed = 1.5f;
+    private float speed = 2f;
 
     public float Speed
     {
@@ -19,6 +19,20 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
+
+    private void OnEnable()
+    {
+        EventManager.OnPlayerWait.AddListener(() => speed = 0f);
+        EventManager.OnObstacleOpen.AddListener(() => speed = 2f);
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnPlayerWait.RemoveListener(() => speed = 0f);
+        EventManager.OnObstacleOpen.RemoveListener(() => speed = 2f);
+
+        
+    }
     // Update is called once per frame
     void Update()
     {
