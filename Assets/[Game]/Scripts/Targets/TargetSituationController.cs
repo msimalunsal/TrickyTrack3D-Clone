@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class TargetSituationController : MonoBehaviour
 {
-    enum TargetSituation {open , close};
+    public enum TargetSituation {open , close};
     
-    TargetSituation targetSituation;
+    public TargetSituation targetSituation;
     private void Start()
     {
         targetSituation= TargetSituation.close;

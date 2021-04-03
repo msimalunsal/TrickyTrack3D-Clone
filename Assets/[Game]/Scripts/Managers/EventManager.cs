@@ -16,10 +16,16 @@ public static class EventManager
 
     #endregion
 
-    #region Door Target Events
+    #region Obstacle Events
     public static UnityEvent OnObstacleOpen = new UnityEvent();
     public static UnityEvent OnObstacleClose = new UnityEvent();
+
+    public static UnityEvent OnPlayerWait = new UnityEvent();
+
+    public static UnityEvent OnPlayerHittarget = new UnityEvent();
     #endregion
+
+
 
 
 
