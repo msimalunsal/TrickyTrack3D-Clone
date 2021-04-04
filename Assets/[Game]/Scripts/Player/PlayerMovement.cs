@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     [SerializeField]
     private float speed = 2f;
-
     public float Speed
     {
         get 
@@ -20,6 +20,14 @@ public class PlayerMovement : MonoBehaviour
     }
     
     private bool isMove = true;
+
+
+    private Rigidbody rigidbody;
+
+    private void Start()
+    {
+        rigidbody = GetComponent<Rigidbody>();
+    }
 
     private void OnEnable()
     {
@@ -45,5 +53,6 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         transform.position = new Vector3(transform.position.x , transform.position.y , transform.position.z + speed * Time.deltaTime);
+        //rigidbody.velocity = new Vector3(0, 0, speed * Time.fixedDeltaTime * 50);
     }
 }

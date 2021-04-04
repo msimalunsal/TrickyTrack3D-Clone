@@ -8,7 +8,14 @@ public class Obstacle : MonoBehaviour
     private Target parent;
     private void Start()
     {
-        parent = transform.parent.gameObject.GetComponent<Target>();
+        if(transform.parent != null)
+        {
+            parent = transform.parent.gameObject.GetComponent<Target>();
+        }
+        else
+        {
+            parent = GetComponent<Target>();
+        }
         animator = GetComponent<Animator>();
     }
     private void OnEnable() 
