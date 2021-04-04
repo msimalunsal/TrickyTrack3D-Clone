@@ -8,7 +8,7 @@ public class Obstacle : MonoBehaviour
     private Target parent;
     private void Start()
     {
-        if(transform.parent != null)
+        if(transform.parent.name != "Obstacles")
         {
             parent = transform.parent.gameObject.GetComponent<Target>();
         }
