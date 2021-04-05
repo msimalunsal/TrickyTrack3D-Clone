@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
 
     [SerializeField]
@@ -21,17 +21,6 @@ public class PlayerMovement : MonoBehaviour
     
     private bool isMove = true;
 
-    private void OnEnable()
-    {
-        EventManager.OnPlayerWait.AddListener(() => isMove = false);
-        EventManager.OnObstacleOpen.AddListener(() => isMove = true);
-    }
-
-    private void OnDisable()
-    {
-        EventManager.OnPlayerWait.RemoveListener(() => isMove = false);
-        EventManager.OnObstacleOpen.RemoveListener(() => isMove = true);
-    }
     // Update is called once per frame
     void Update()
     {
