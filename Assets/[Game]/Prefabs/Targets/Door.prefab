@@ -514,6 +514,7 @@ GameObject:
   - component: {fileID: 6552378912468194453}
   - component: {fileID: 2089226876}
   - component: {fileID: 2089226875}
+  - component: {fileID: 2121953521}
   m_Layer: 0
   m_Name: RightDoor
   m_TagString: Untagged
@@ -626,6 +627,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a30f6d2f6ff48cf41b65f56e2595ded0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2121953521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6552378912468194455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57c7a818eeb1524aa0d451e09627160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6552378913478176944
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +716,7 @@ GameObject:
   - component: {fileID: 6552378913673614290}
   - component: {fileID: 1503024783}
   - component: {fileID: 1503024782}
+  - component: {fileID: 1264441139}
   m_Layer: 0
   m_Name: LeftDoor
   m_TagString: Untagged
@@ -813,5 +827,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a30f6d2f6ff48cf41b65f56e2595ded0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1264441139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6552378913673614292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c57c7a818eeb1524aa0d451e09627160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
