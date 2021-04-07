@@ -15,7 +15,7 @@ public class TargetSituationController : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         var ball = other.gameObject.GetComponent<Ball>();
-        if(ball != null)
+        if(other.gameObject.GetComponent<Ball>())
         {
             if(situation.targetSituation == Target.TargetSituation.close)
             {
