@@ -21,7 +21,19 @@ public class EnemyMovement : MonoBehaviour
     
     private bool isMove = true;
 
-    // Update is called once per frame
+    private void OnEnable()
+    {
+        EventManager.OnEnemyWait.AddListener(() => isMove = false);
+        EventManager.OnObstacleOpen.AddListener(() => isMove = true);
+
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnEnemyWait.RemoveListener(() => isMove = false);
+        EventManager.OnObstacleOpen.RemoveListener(() => isMove = true);
+        
+    }
     void Update()
     {
         if(isMove)

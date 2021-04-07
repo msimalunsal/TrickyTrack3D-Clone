@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimationController : MonoBehaviour
+public class EnemyAnimationController : MonoBehaviour
 {
     private Animator animator;
 
@@ -12,14 +12,14 @@ public class PlayerAnimationController : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManager.OnPlayerWait.AddListener(() => animator.SetBool("isWait" , true));
+        EventManager.OnEnemyWait.AddListener(() => animator.SetBool("isWait" , true));
         EventManager.OnObstacleOpen.AddListener(() => animator.SetBool("isWait",false));
 
     }
 
     private void OnDisable()
     {
-        EventManager.OnPlayerWait.RemoveListener(() => animator.SetBool("isWait" , true));
+        EventManager.OnEnemyWait.RemoveListener(() => animator.SetBool("isWait" , true));
         EventManager.OnObstacleOpen.RemoveListener(() => animator.SetBool("isWait",false));
         
     }

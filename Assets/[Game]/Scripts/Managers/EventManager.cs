@@ -28,6 +28,8 @@ public static class EventManager
 
     public static UnityEvent OnEnemyThrowBall = new UnityEvent();
 
+    public static UnityEvent OnEnemyWait = new UnityEvent();
+
     #endregion
 
 

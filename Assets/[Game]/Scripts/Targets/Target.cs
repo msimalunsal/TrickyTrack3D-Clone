@@ -11,9 +11,13 @@ public class Target : MonoBehaviour
     {
         PlayerMovement player = other.GetComponent<PlayerMovement>();
         EnemyMovement enemy = other.GetComponent<EnemyMovement>();
-        if((player != null || enemy!= null )&&  (int)targetSituation == (int)TargetSituation.close && GetComponent<Boost>() == null)
+        if(player != null &&  (int)targetSituation == (int)TargetSituation.close && GetComponent<Boost>() == null)
         {
             EventManager.OnPlayerWait.Invoke();
+        }
+        else if(enemy != null &&  (int)targetSituation == (int)TargetSituation.close && GetComponent<Boost>() == null)
+        {
+            EventManager.OnEnemyWait.Invoke();
         }
         
     }

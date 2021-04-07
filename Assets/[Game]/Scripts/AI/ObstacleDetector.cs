@@ -36,21 +36,6 @@ public class ObstacleDetector: Singleton<ObstacleDetector>
     private void Start()
     {
         targetList = GameObject.FindGameObjectsWithTag("Obstacle");
-
-        /*int n = targetList.Length;
-        for (int i = 0; i < n - 1; i++)
-        {
-            for (int j = 0; j < n - i - 1; j++)
-            {
-                 if (targetList[j].transform.position.z > targetList[j + 1].transform.position.z)
-                {
-                    // swap temp and arr[i]
-                    GameObject temp = targetList[j];
-                    targetList[j] = targetList[j + 1];
-                    targetList[j + 1] = temp;
-                }                
-            }   
-        }*/
         Spawn();
         RandomTime();
     }
@@ -83,11 +68,12 @@ public class ObstacleDetector: Singleton<ObstacleDetector>
     
     private void RandomTime()
     {
-        randomTime = Random.Range(1,4);
+        randomTime = Random.Range(1,3);
         EventManager.OnEnemyThrowBall.Invoke();
     }
     public void Spawn() {
 		_ball = Instantiate(ballPrefab, thrower.position, Quaternion.identity);
         _ball.transform.SetParent(transform.parent);
 	}
+
 }
