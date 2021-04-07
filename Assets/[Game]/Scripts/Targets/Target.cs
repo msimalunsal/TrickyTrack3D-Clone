@@ -10,7 +10,8 @@ public class Target : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         PlayerMovement player = other.GetComponent<PlayerMovement>();
-        if(player != null &&  (int)targetSituation == (int)TargetSituation.close && GetComponent<Boost>() == null)
+        EnemyMovement enemy = other.GetComponent<EnemyMovement>();
+        if((player != null || enemy!= null )&&  (int)targetSituation == (int)TargetSituation.close && GetComponent<Boost>() == null)
         {
             EventManager.OnPlayerWait.Invoke();
         }

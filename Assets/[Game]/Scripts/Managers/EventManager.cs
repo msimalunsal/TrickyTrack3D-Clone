@@ -21,9 +21,15 @@ public static class EventManager
     public static UnityEvent OnObstacleClose = new UnityEvent();
 
     public static UnityEvent OnPlayerWait = new UnityEvent();
-
     public static UnityEvent OnPlayerHit = new UnityEvent();
     #endregion
+
+    #region Enemy AI Events
+
+    public static UnityEvent OnEnemyThrowBall = new UnityEvent();
+
+    #endregion
+
 
 
 
