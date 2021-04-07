@@ -13,9 +13,19 @@ public class Swipe : MonoBehaviour
 	private Vector3 _forcevector;		// Force vector to apply ball
 	private Ball _ball;					// Ball to throw
 
+	private bool isFinish = false;
 	public Transform player;
 
+	private void OnEnable()
+	{
+		EventManager.OnLevelFinish.AddListener(() => isFinish=true);
+	}
 
+	private void OnDisable()
+	{
+		EventManager.OnLevelFinish.RemoveListener(() => isFinish=true);
+		
+	}
 	private void Start() {
 		Spawn();
 	}
@@ -25,6 +35,7 @@ public class Swipe : MonoBehaviour
 	}
 
 	private void ControlSwipe() {
+
 		// Starting to drag
 		if (Input.GetMouseButtonDown(0)) {
 			// Starting to showing trajectory
@@ -52,7 +63,7 @@ public class Swipe : MonoBehaviour
 		}
 
 		// End the dragging and push the ball
-		if (Input.GetMouseButtonUp(0)) {
+		if (Input.GetMouseButtonUp(0) && !isFinish) {
 			if (_ball) {
 				// Appling Force vector to the ball
 				_ball.Push(_forcevector);
@@ -64,6 +75,20 @@ public class Swipe : MonoBehaviour
 
 			// Hiding the trajectory
 			trajectory.Hide();
+		}
+
+		if(isFinish)
+		{
+			if (_ball) {
+				trajectory.Show();
+				// Appling Force vector to the ball
+				_ball.Push(_forcevector * 1.2f);
+				_ball = null;
+
+				// Spawning a new ball to throw
+				Invoke("Spawn", 0.2f);
+			}
+
 		}
 	}
 
