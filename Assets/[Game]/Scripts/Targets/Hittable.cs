@@ -6,6 +6,7 @@ public class Hittable : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other) 
     {
+        if(GetComponent<Ball>() != null && transform.position.y <= 0.2) return;
         if(other.gameObject.GetComponent<PlayerMovement>() != null)
         {
             if(gameObject.tag == "PlayerBall") return;

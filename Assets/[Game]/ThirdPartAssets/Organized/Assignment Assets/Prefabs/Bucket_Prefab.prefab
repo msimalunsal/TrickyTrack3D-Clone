@@ -237,6 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyedVersion: {fileID: 893628428960144510, guid: 0ee2a58be738dad4a9610303ae6b9f88,
     type: 3}
+  ballList: {fileID: 0}
 --- !u!1 &2452949538611875237
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +435,7 @@ GameObject:
   - component: {fileID: 2312007950000880945}
   m_Layer: 0
   m_Name: Bucket_Prefab
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

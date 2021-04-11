@@ -51,21 +51,29 @@ public class ObstacleDetector: Singleton<ObstacleDetector>
         {
            for(int a = 0 ; a < targetList.Length ; a++)
             {
+
                 if(transform.position.z <= targetList[a].transform.position.z && Vector3.Distance(transform.position , targetList[a].transform.position) < 5f) 
                 {
-                    if((targetList[a].transform.position.x - transform.position.x < 1.5f && targetList[a].transform.parent.parent.GetComponent<Target>().targetSituation == Target.TargetSituation.close && targetList[a].transform.parent.parent.tag != "DoubleDoor")
-                    || ((targetList[a].transform.position.x - transform.position.x < 1.5f && targetList[a].transform.parent.parent.GetComponent<Target>().targetSituation == Target.TargetSituation.open && targetList[a].transform.parent.parent.tag == "DoubleDoor")) 
-                    || (targetList[a].transform.position.x - transform.position.x >= 1.5f && targetList[a].transform.parent.parent.GetComponent<Target>().targetSituation == Target.TargetSituation.open)
+                    if((targetList[a].transform.position.x - transform.position.x < 2.5f && targetList[a].transform.parent.parent.GetComponent<Target>().targetSituation == Target.TargetSituation.close && targetList[a].transform.parent.parent.tag != "DoubleDoor")
+                    || (targetList[a].transform.position.x - transform.position.x < 2.5f && targetList[a].transform.parent.parent.GetComponent<Target>().targetSituation == Target.TargetSituation.open && targetList[a].transform.parent.parent.tag == "DoubleDoor")
+                    || (targetList[a].transform.position.x - transform.position.x >= 2.5f && targetList[a].transform.parent.parent.GetComponent<Target>().targetSituation == Target.TargetSituation.open && targetList[a].transform.parent.parent.tag != "DoubleDoor")
                     )
                     {   // eger kendi hedefiyse, hedef kapalıysa ve hedef double door değilse vur.
                         //eger kendi hedefiyse, hedef açıksa ve hedef double door ise vur.
                         // ya da playerın hedefiyse ve onun hedefi açıksa vur.
+                       
                         ThrowBall(a);
-                        
+                         
                     }
-                    Debug.DrawRay (targetList[a].transform.position, (transform.position - targetList[a].transform.position), Color.yellow);
+                    else if((targetList[a].transform.position.x - transform.position.x < 2.5f && targetList[a].transform.GetComponent<Target>().targetSituation == Target.TargetSituation.close)
+                    || (targetList[a].transform.position.x - transform.position.x < 2.5f && targetList[a].transform.GetComponent<Target>().targetSituation == Target.TargetSituation.open))
+                    {
+
+                        ThrowBall(a);
+                    }
+                   
                 }
-                
+                Debug.DrawRay (targetList[a].transform.position, (transform.position - targetList[a].transform.position), Color.yellow);  
             }
         }
     }
