@@ -21,7 +21,7 @@ public class EnemyAnimationController : MonoBehaviour
     {
         EventManager.OnEnemyWait.RemoveListener(() => animator.SetBool("isWait" , true));
         EventManager.OnObstacleOpen.RemoveListener(() => animator.SetBool("isWait",false));
-        
+
     }
 
 

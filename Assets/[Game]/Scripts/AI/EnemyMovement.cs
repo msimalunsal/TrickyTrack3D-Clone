@@ -25,6 +25,8 @@ public class EnemyMovement : MonoBehaviour
     {
         EventManager.OnEnemyWait.AddListener(() => isMove = false);
         EventManager.OnObstacleOpen.AddListener(() => isMove = true);
+        EventManager.OnEnemyHit.AddListener(() => isMove = false);
+        EventManager.OnEnemyHit.AddListener(() => this.Wait(1.5f,() => isMove = true));
 
     }
 
@@ -32,6 +34,8 @@ public class EnemyMovement : MonoBehaviour
     {
         EventManager.OnEnemyWait.RemoveListener(() => isMove = false);
         EventManager.OnObstacleOpen.RemoveListener(() => isMove = true);
+        EventManager.OnEnemyHit.RemoveListener(() => isMove = false);
+        EventManager.OnEnemyHit.RemoveListener(() => this.Wait(1.5f,() => isMove = true));
         
     }
     void Update()

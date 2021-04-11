@@ -8,8 +8,11 @@ public class Hittable : MonoBehaviour
     {
         if(other.gameObject.GetComponent<PlayerMovement>() != null)
         {
-            //EventManager.OnPlayerHit.Invoke();
-            //EventManager.OnPlayerWait.Invoke();
+            EventManager.OnPlayerHit.Invoke();
+        }
+        else if(other.gameObject.GetComponent<EnemyMovement>() != null)
+        {
+            EventManager.OnEnemyHit.Invoke();
         }
     }
 }

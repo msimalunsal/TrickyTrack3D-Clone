@@ -25,12 +25,18 @@ public class PlayerMovement : MonoBehaviour
     {
         EventManager.OnPlayerWait.AddListener(() => isMove = false);
         EventManager.OnObstacleOpen.AddListener(() => isMove = true);
+        EventManager.OnPlayerHit.AddListener(() => isMove = false);
+        EventManager.OnPlayerHit.AddListener(() => this.Wait(1.5f,() => isMove = true));
     }
 
     private void OnDisable()
     {
         EventManager.OnPlayerWait.RemoveListener(() => isMove = false);
         EventManager.OnObstacleOpen.RemoveListener(() => isMove = true);
+        EventManager.OnPlayerHit.RemoveListener(() => isMove = false);
+        EventManager.OnPlayerHit.RemoveListener(() => this.Wait(1.5f,() => isMove = true));
+        
+
     }
     // Update is called once per frame
     void Update()
