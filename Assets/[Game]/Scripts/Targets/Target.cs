@@ -15,7 +15,11 @@ public class Target : MonoBehaviour
         {
             EventManager.OnPlayerWait.Invoke();
         }
-        else if(enemy != null &&  (int)targetSituation == (int)TargetSituation.close && GetComponent<Boost>() == null)
+        else if(enemy != null &&  (int)targetSituation == (int)TargetSituation.close && GetComponent<Boost>() == null && gameObject.tag != "DoubleDoor")
+        {
+            EventManager.OnEnemyWait.Invoke();
+        }
+        else if(enemy != null && (int)targetSituation == (int)TargetSituation.open && gameObject.tag == "DoubleDoor")
         {
             EventManager.OnEnemyWait.Invoke();
         }
