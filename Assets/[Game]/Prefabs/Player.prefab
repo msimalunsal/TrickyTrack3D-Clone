@@ -231,6 +231,31 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 128229009158937252}
+    - target: {fileID: 6567610911954952503, guid: fcdc04e73a99d4d79a94b20ac3737046,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.23000336
+      objectReference: {fileID: 0}
+    - target: {fileID: 6679317379123441117, guid: fcdc04e73a99d4d79a94b20ac3737046,
+        type: 3}
+      propertyPath: dotSpacing
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 6679317379123441117, guid: fcdc04e73a99d4d79a94b20ac3737046,
+        type: 3}
+      propertyPath: dotsNumber
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6679317379123441117, guid: fcdc04e73a99d4d79a94b20ac3737046,
+        type: 3}
+      propertyPath: dotMaxScale
+      value: 0.629
+      objectReference: {fileID: 0}
+    - target: {fileID: 6679317379123441117, guid: fcdc04e73a99d4d79a94b20ac3737046,
+        type: 3}
+      propertyPath: dotMinScale
+      value: 0.071
+      objectReference: {fileID: 0}
     - target: {fileID: 7011486838187826212, guid: fcdc04e73a99d4d79a94b20ac3737046,
         type: 3}
       propertyPath: m_RootOrder

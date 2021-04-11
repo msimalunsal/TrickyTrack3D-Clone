@@ -8,6 +8,8 @@ TagManager:
   - Target
   - Obstacle
   - DoubleDoor
+  - EnemyBall
+  - PlayerBall
   layers:
   - Default
   - TransparentFX

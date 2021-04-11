@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 526090906}
   m_Layer: 0
   m_Name: DoubleDoor
-  m_TagString: Untagged
+  m_TagString: DoubleDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -452,8 +452,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.377326, y: 1.1299839, z: 0}
-  m_Center: {x: 2.5174842, y: -0.8215127, z: 0.04711151}
+  m_Size: {x: 3.3815832, y: 1.1299839, z: 0}
+  m_Center: {x: 1.5153556, y: -0.8215127, z: 0.04711151}
 --- !u!114 &526090906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,8 +561,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 0.9633614}
+  m_Center: {x: -1.9534422e-16, y: -2.6451677e-12, z: -0.018350141}
 --- !u!114 &3064403303764727381
 MonoBehaviour:
   m_ObjectHideFlags: 0

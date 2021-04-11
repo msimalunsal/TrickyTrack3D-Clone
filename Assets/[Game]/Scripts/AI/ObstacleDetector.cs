@@ -57,8 +57,8 @@ public class ObstacleDetector: Singleton<ObstacleDetector>
                     || ((targetList[a].transform.position.x - transform.position.x < 1.5f && targetList[a].transform.parent.parent.GetComponent<Target>().targetSituation == Target.TargetSituation.open && targetList[a].transform.parent.parent.tag == "DoubleDoor")) 
                     || (targetList[a].transform.position.x - transform.position.x >= 1.5f && targetList[a].transform.parent.parent.GetComponent<Target>().targetSituation == Target.TargetSituation.open)
                     )
-                    { // eger kendi hedefiyse, hedef kapalıysa ve hedef double door değilse vur.
-                    //eger kendi hedefiyse, hedef açıksa ve hedef double door ise vur.
+                    {   // eger kendi hedefiyse, hedef kapalıysa ve hedef double door değilse vur.
+                        //eger kendi hedefiyse, hedef açıksa ve hedef double door ise vur.
                         // ya da playerın hedefiyse ve onun hedefi açıksa vur.
                         ThrowBall(a);
                         
@@ -77,7 +77,7 @@ public class ObstacleDetector: Singleton<ObstacleDetector>
     }
     public void Spawn() {
 		_ball = Instantiate(ballPrefab, thrower.position, Quaternion.identity);
-        _ball.transform.SetParent(transform.parent);
+        _ball.transform.SetParent(transform);
 	}
 
     private void ThrowBall(int a)
